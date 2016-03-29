@@ -25,7 +25,7 @@ Param(
     [string]$filePath = "E:\",
     [int]$limit = 40,
     [int]$days = 365,
-    [string]$logFile = "cleanup.log",
+    [string]$logFile = "$HOME\cleanup.log",
     [switch]$WhatIf
 )
 

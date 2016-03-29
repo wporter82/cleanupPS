@@ -13,7 +13,7 @@ Cleans a directory of files older than a period of days.
     Default: 365
 ###logFile
     Location of the generated log file.
-    Default: same location as the script.
+    Default: User's $HOME directory
 ###WhatIf
     Run without deleting any files, just show what would be deleted.
 
