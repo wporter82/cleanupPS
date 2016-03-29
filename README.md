@@ -31,7 +31,7 @@ Create a new scheduled task by following the steps here:
 <a href="http://windows.microsoft.com/en-US/windows/schedule-task">Schedule a task</a>
 
 When you are at the step to choose a program to run, use the following:
-<code>powershell -file "[path to cleanup.ps1] [options]"</code>
+<code>powershell -file "[path to cleanup.ps1]" [options]</code>
 
 
 ###Note:
