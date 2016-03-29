@@ -15,7 +15,7 @@
     Default: 365
 .PARAMETER logFile
     Location of the generated log file.
-    Default: same location as the script.
+    Default: User's $HOME directory
 .PARAMETER WhatIf
     Run without deleting any files, just show what would be deleted.
 .EXAMPLE
