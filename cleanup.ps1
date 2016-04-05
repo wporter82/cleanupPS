@@ -6,13 +6,10 @@
     Default values can be modified in the file or they can be passed as command line arguments.
 .PARAMETER filePath
     Location that the cleanup will be done.
-    Default: E:\
 .PARAMETER limit
     The total size in GB that the target file path should be before cleaning is done.
-    Default: 40
 .PARAMETER days
     How many days back files should be kept. Any file older will be deleted.
-    Default: 365
 .PARAMETER logFile
     Location of the generated log file.
     Default: User's $HOME directory
@@ -20,13 +17,23 @@
     Run without deleting any files, just show what would be deleted.
 .EXAMPLE
     .\cleanup.ps1 -filePath E:\ -limit 40 -days 365 -logFile cleanup.log
+    All options are specified by name for maximum verbosity of the command.
+.EXAMPLE
+    .\cleanup.ps1 E:\ 40 365
+    Only the required parameters can be passed to keep the command short.
 #>
+[CmdletBinding()]
 Param(
-    [string]$filePath = "E:\",
-    [int]$limit = 40,
-    [int]$days = 365,
-    [string]$logFile = "$HOME\cleanup.log",
-    [switch]$WhatIf
+    [Parameter(Mandatory=$True,Position=1)]
+        [string]$filePath,
+    [Parameter(Mandatory=$True,Position=2)]
+        [int]$limit,
+    [Parameter(Mandatory=$True,Position=3)]
+        [int]$days,
+    [Parameter(Mandatory=$False)]
+        [string]$logFile = "$HOME\cleanup.log",
+    [Parameter(Mandatory=$False)]
+        [switch]$WhatIf
 )
 
 # log with a timestamp
